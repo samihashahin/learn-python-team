@@ -61,3 +61,20 @@ def test_nested_if():
         result = 'Too young'
 
     assert result == 'Allowed in'
+
+
+def test_grade_letter_boundaries():
+    """IF statement with elif at the exact grade limits"""
+
+    for score, expected in [(90, 'A'), (80, 'B'), (70, 'C'), (69, 'F')]:
+        if score >= 90:
+            grade = 'A'
+        elif score >= 80:
+            grade = 'B'
+        elif score >= 70:
+            grade = 'C'
+        else:
+            grade = 'F'
+
+        assert grade == expected
+    
